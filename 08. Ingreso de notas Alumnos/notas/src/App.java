@@ -2,7 +2,6 @@ import java.util.Scanner;
 import java.util.Locale;
 public class App{
 
-
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         sc.useLocale(Locale.US);
@@ -37,7 +36,7 @@ public class App{
 
                 case 2:
                     if(notasCargadas){
-                    System.out.println("------>>> LISTA DE NOTAS <<<------");
+                    System.out.println("---------->>> LISTA DE NOTAS <<<---3-------");
                     System.out.println("");
                     r.notasDeEstudiantes(matrizNotas, listaNombreAlumnos);  
                 }
@@ -68,8 +67,8 @@ public class App{
                 case 4:
                      System.out.println("------>>> CANTIDAD DE ALUMNOS REPROBADOS <<<------");
                      System.out.println("");
-                if(notasCargadas){
-                    do {  
+                     if(notasCargadas){
+                        do {  
                            System.out.print("Eliga el numero de examen: ");
                            columna = sc.nextInt();
 
@@ -84,16 +83,25 @@ public class App{
                    }
                    break;
                    case 5:
-                   
+                   if(notasCargadas){
                    System.out.println("------>>> LISTA DE ALUMNOS APROBADOS <<<------");
                    System.out.println("");
                    r.listaAlumnosAprobados(listaNombreAlumnos, matrizNotas);
+                   }
+                   else{
+                    System.out.println("¡¡NO HAY NOTAS CARGADAS !!");
+                   }
                    break;
 
                    case 6:
+                   if(notasCargadas){
                    System.out.println("------>>> LISTA DE ALUMNOS REPROBADOS <<<------");
                    System.out.println("");
                    r.listaAlumnosReprobados(listaNombreAlumnos, matrizNotas);
+                   }
+                   else{
+                    System.out.println("¡¡NO HAY NOTAS CARGADAS !!");
+                   }
                    break;
                 }
             }

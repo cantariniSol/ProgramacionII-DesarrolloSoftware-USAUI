@@ -1,8 +1,7 @@
 import java.util.Scanner;
-import java.util.Arrays;
 public class RegistroNotas{
    
-static void mostrarManu(){
+public  void mostrarManu(){
         System.out.println();
         System.out.println("------------>>> MENÚ DE OPCIONES <<<-------------");
         System.out.println();
@@ -16,7 +15,7 @@ static void mostrarManu(){
         System.out.println("--------------------<<<<>>>>----------------------");
 }
 
-public static void ingresarNota(Scanner sc, double[][] matrizNotas, String[] listaNombreAlumnos){
+public  void ingresarNota(Scanner sc, double[][] matrizNotas, String[] listaNombreAlumnos){
     double nota = 0;
     for(int n = 0; n < matrizNotas.length; n++){
         System.out.println(">> Alumno " + n + " ---> " + listaNombreAlumnos[n] + ": ");
@@ -37,10 +36,11 @@ public static void ingresarNota(Scanner sc, double[][] matrizNotas, String[] lis
         }
         System.out.println("---------->>> ¡¡NOTAS CARGADAS CON EXITO!! <<<----------");
      }
-     public static void notasDeEstudiantes(double[][] matrizNotas, String[] listaNombreAlumnos ){
-        System.out.println("                      0°      1°      2°     3° ");
+public  void notasDeEstudiantes(double[][] matrizNotas, String[] listaNombreAlumnos ){
+        System.out.println("           EXAMEN N°         0°     1°      2°     3° ");
+        System.out.println("");
      for(int i=0;i<matrizNotas.length;i++){
-         System.out.print(">> Alumno " + i + "--->" + listaNombreAlumnos[i] + ":   ");
+         System.out.print(">> Alumno " + i + " ---> " + listaNombreAlumnos[i] + ":    ");
          for(int j=0;j<matrizNotas[0].length;j++){
              System.out.print(matrizNotas[i][j] + "    ");
          }
@@ -48,7 +48,7 @@ public static void ingresarNota(Scanner sc, double[][] matrizNotas, String[] lis
      }   
  }
 
-public static double notaFinalDeEstudiante(double[][] matrizNotas, int fila){
+public  double notaFinalDeEstudiante(double[][] matrizNotas, int fila){
      double sumaNotas = 0;
      double promedio = 0;
          for(int m = 0; m < matrizNotas[fila].length; m++){
@@ -58,7 +58,7 @@ public static double notaFinalDeEstudiante(double[][] matrizNotas, int fila){
          return promedio;
      }
  //
- public static int alumnosDesaprobados(double[][] matrizNotas, int columna){
+ public int alumnosDesaprobados(double[][] matrizNotas, int columna){
      int sumaAlumnos = 0;
       for(int n = 0; n < matrizNotas.length; n++){
          if(matrizNotas[n][columna] < 4){
@@ -68,7 +68,7 @@ public static double notaFinalDeEstudiante(double[][] matrizNotas, int fila){
      return sumaAlumnos;
  }
 
- public static void listaAlumnosAprobados(String[] listaNombreAlumnos, double[][] matrizNotas ){
+ public void listaAlumnosAprobados(String[] listaNombreAlumnos, double[][] matrizNotas ){
      int sumaAlumnosAprobados = 0; 
      for(int n = 0; n < matrizNotas.length; n++){
         if(notaFinalDeEstudiante(matrizNotas, n) >= 4){
@@ -80,7 +80,7 @@ public static double notaFinalDeEstudiante(double[][] matrizNotas, int fila){
     
  }
 
- public static void listaAlumnosReprobados(String[] listaNombreAlumnos, double[][] matrizNotas ){
+ public  void listaAlumnosReprobados(String[] listaNombreAlumnos, double[][] matrizNotas ){
      int sumaAlumnosAprobados = 0; 
      for(int n = 0; n < matrizNotas.length; n++){
         if(notaFinalDeEstudiante(matrizNotas, n) < 4){
